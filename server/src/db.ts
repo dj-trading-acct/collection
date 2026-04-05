@@ -31,11 +31,40 @@ export function getDb(): Database.Database {
 function migrate(db: Database.Database): void {
   db.exec(`
     CREATE TABLE IF NOT EXISTS pokemon (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      pokedex_number INTEGER NOT NULL,
-      type TEXT NOT NULL,
-      collected INTEGER NOT NULL DEFAULT 0
-    )
+      id            INTEGER PRIMARY KEY AUTOINCREMENT,
+      species       TEXT NOT NULL,
+      dex_number    INTEGER NOT NULL,
+      form          TEXT,
+      generation    INTEGER NOT NULL,
+      nickname      TEXT,
+      gender        TEXT CHECK(gender IN ('male','female','genderless')),
+      level         INTEGER CHECK(level BETWEEN 1 AND 100),
+      nature        TEXT,
+      mint_nature   TEXT,
+      ability       TEXT,
+      is_hidden_ability BOOLEAN DEFAULT 0,
+      ot_name       TEXT,
+      ot_tid        TEXT,
+      ot_gender     TEXT CHECK(ot_gender IN ('male','female')),
+      language_tag  TEXT,
+      game_of_origin TEXT,
+      current_location TEXT,
+      is_shiny      BOOLEAN DEFAULT 0,
+      is_event      BOOLEAN DEFAULT 0,
+      is_alpha      BOOLEAN DEFAULT 0,
+      is_gigantamax BOOLEAN DEFAULT 0,
+      poke_ball     TEXT,
+      ribbons       TEXT DEFAULT '[]',
+      marks         TEXT DEFAULT '[]',
+      notes         TEXT,
+      created_at    TEXT DEFAULT (datetime('now')),
+      updated_at    TEXT DEFAULT (datetime('now'))
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_pokemon_species ON pokemon(species);
+    CREATE INDEX IF NOT EXISTS idx_pokemon_dex_number ON pokemon(dex_number);
+    CREATE INDEX IF NOT EXISTS idx_pokemon_game_origin ON pokemon(game_of_origin);
+    CREATE INDEX IF NOT EXISTS idx_pokemon_current_location ON pokemon(current_location);
+    CREATE INDEX IF NOT EXISTS idx_pokemon_is_shiny ON pokemon(is_shiny);
   `);
 }
