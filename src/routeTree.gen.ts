@@ -9,97 +9,77 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as CollectionRouteRouteImport } from './routes/collection/route'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CollectionIndexRouteImport } from './routes/collection/index'
-import { Route as CollectionPokemonIdIndexRouteImport } from './routes/collection/$pokemonId/index'
-import { Route as CollectionPokemonIdEditRouteImport } from './routes/collection/$pokemonId/edit'
+import { Route as PokemonNewRouteImport } from './routes/pokemon/new'
+import { Route as PokemonPokemonIdIndexRouteImport } from './routes/pokemon/$pokemonId/index'
+import { Route as PokemonPokemonIdEditRouteImport } from './routes/pokemon/$pokemonId/edit'
 
-const CollectionRouteRoute = CollectionRouteRouteImport.update({
-  id: '/collection',
-  path: '/collection',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CollectionIndexRoute = CollectionIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => CollectionRouteRoute,
+const PokemonNewRoute = PokemonNewRouteImport.update({
+  id: '/pokemon/new',
+  path: '/pokemon/new',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const CollectionPokemonIdIndexRoute =
-  CollectionPokemonIdIndexRouteImport.update({
-    id: '/$pokemonId/',
-    path: '/$pokemonId/',
-    getParentRoute: () => CollectionRouteRoute,
-  } as any)
-const CollectionPokemonIdEditRoute = CollectionPokemonIdEditRouteImport.update({
-  id: '/$pokemonId/edit',
-  path: '/$pokemonId/edit',
-  getParentRoute: () => CollectionRouteRoute,
+const PokemonPokemonIdIndexRoute = PokemonPokemonIdIndexRouteImport.update({
+  id: '/pokemon/$pokemonId/',
+  path: '/pokemon/$pokemonId/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PokemonPokemonIdEditRoute = PokemonPokemonIdEditRouteImport.update({
+  id: '/pokemon/$pokemonId/edit',
+  path: '/pokemon/$pokemonId/edit',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/collection': typeof CollectionRouteRouteWithChildren
-  '/collection/': typeof CollectionIndexRoute
-  '/collection/$pokemonId/edit': typeof CollectionPokemonIdEditRoute
-  '/collection/$pokemonId/': typeof CollectionPokemonIdIndexRoute
+  '/pokemon/new': typeof PokemonNewRoute
+  '/pokemon/$pokemonId/edit': typeof PokemonPokemonIdEditRoute
+  '/pokemon/$pokemonId/': typeof PokemonPokemonIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/collection': typeof CollectionIndexRoute
-  '/collection/$pokemonId/edit': typeof CollectionPokemonIdEditRoute
-  '/collection/$pokemonId': typeof CollectionPokemonIdIndexRoute
+  '/pokemon/new': typeof PokemonNewRoute
+  '/pokemon/$pokemonId/edit': typeof PokemonPokemonIdEditRoute
+  '/pokemon/$pokemonId': typeof PokemonPokemonIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/collection': typeof CollectionRouteRouteWithChildren
-  '/collection/': typeof CollectionIndexRoute
-  '/collection/$pokemonId/edit': typeof CollectionPokemonIdEditRoute
-  '/collection/$pokemonId/': typeof CollectionPokemonIdIndexRoute
+  '/pokemon/new': typeof PokemonNewRoute
+  '/pokemon/$pokemonId/edit': typeof PokemonPokemonIdEditRoute
+  '/pokemon/$pokemonId/': typeof PokemonPokemonIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/collection'
-    | '/collection/'
-    | '/collection/$pokemonId/edit'
-    | '/collection/$pokemonId/'
+    | '/pokemon/new'
+    | '/pokemon/$pokemonId/edit'
+    | '/pokemon/$pokemonId/'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/collection'
-    | '/collection/$pokemonId/edit'
-    | '/collection/$pokemonId'
+  to: '/' | '/pokemon/new' | '/pokemon/$pokemonId/edit' | '/pokemon/$pokemonId'
   id:
     | '__root__'
     | '/'
-    | '/collection'
-    | '/collection/'
-    | '/collection/$pokemonId/edit'
-    | '/collection/$pokemonId/'
+    | '/pokemon/new'
+    | '/pokemon/$pokemonId/edit'
+    | '/pokemon/$pokemonId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CollectionRouteRoute: typeof CollectionRouteRouteWithChildren
+  PokemonNewRoute: typeof PokemonNewRoute
+  PokemonPokemonIdEditRoute: typeof PokemonPokemonIdEditRoute
+  PokemonPokemonIdIndexRoute: typeof PokemonPokemonIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/collection': {
-      id: '/collection'
-      path: '/collection'
-      fullPath: '/collection'
-      preLoaderRoute: typeof CollectionRouteRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -107,49 +87,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/collection/': {
-      id: '/collection/'
-      path: '/'
-      fullPath: '/collection/'
-      preLoaderRoute: typeof CollectionIndexRouteImport
-      parentRoute: typeof CollectionRouteRoute
+    '/pokemon/new': {
+      id: '/pokemon/new'
+      path: '/pokemon/new'
+      fullPath: '/pokemon/new'
+      preLoaderRoute: typeof PokemonNewRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/collection/$pokemonId/': {
-      id: '/collection/$pokemonId/'
-      path: '/$pokemonId'
-      fullPath: '/collection/$pokemonId/'
-      preLoaderRoute: typeof CollectionPokemonIdIndexRouteImport
-      parentRoute: typeof CollectionRouteRoute
+    '/pokemon/$pokemonId/': {
+      id: '/pokemon/$pokemonId/'
+      path: '/pokemon/$pokemonId'
+      fullPath: '/pokemon/$pokemonId/'
+      preLoaderRoute: typeof PokemonPokemonIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/collection/$pokemonId/edit': {
-      id: '/collection/$pokemonId/edit'
-      path: '/$pokemonId/edit'
-      fullPath: '/collection/$pokemonId/edit'
-      preLoaderRoute: typeof CollectionPokemonIdEditRouteImport
-      parentRoute: typeof CollectionRouteRoute
+    '/pokemon/$pokemonId/edit': {
+      id: '/pokemon/$pokemonId/edit'
+      path: '/pokemon/$pokemonId/edit'
+      fullPath: '/pokemon/$pokemonId/edit'
+      preLoaderRoute: typeof PokemonPokemonIdEditRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
 
-interface CollectionRouteRouteChildren {
-  CollectionIndexRoute: typeof CollectionIndexRoute
-  CollectionPokemonIdEditRoute: typeof CollectionPokemonIdEditRoute
-  CollectionPokemonIdIndexRoute: typeof CollectionPokemonIdIndexRoute
-}
-
-const CollectionRouteRouteChildren: CollectionRouteRouteChildren = {
-  CollectionIndexRoute: CollectionIndexRoute,
-  CollectionPokemonIdEditRoute: CollectionPokemonIdEditRoute,
-  CollectionPokemonIdIndexRoute: CollectionPokemonIdIndexRoute,
-}
-
-const CollectionRouteRouteWithChildren = CollectionRouteRoute._addFileChildren(
-  CollectionRouteRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CollectionRouteRoute: CollectionRouteRouteWithChildren,
+  PokemonNewRoute: PokemonNewRoute,
+  PokemonPokemonIdEditRoute: PokemonPokemonIdEditRoute,
+  PokemonPokemonIdIndexRoute: PokemonPokemonIdIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

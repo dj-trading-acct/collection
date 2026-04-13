@@ -190,6 +190,7 @@ export function PokemonForm({ pokemon, formId, onSuccess }: PokemonFormProps) {
   const isSubmitting = createMutation.isPending || updateMutation.isPending;
 
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
+  const [tagsTouched, setTagsTouched] = useState(false);
 
   const form = useForm({
     defaultValues: buildDefaultValues(pokemon),
@@ -550,7 +551,6 @@ export function PokemonForm({ pokemon, formId, onSuccess }: PokemonFormProps) {
           <div className="col-span-2">
             <form.Field name="tags">
               {(field) => {
-                const [tagsTouched, setTagsTouched] = useState(false);
                 const hasError = tagsTouched && field.state.value.some(
                   (t) => !/^[a-z]([a-z-]*[a-z])?$/.test(t),
                 );

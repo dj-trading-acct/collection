@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, useRef, useId } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Route } from "../routes/collection/route";
+import { Route } from "../routes/index";
 
 import { usePokemonFilters } from "../api/queries";
 import { BallSelect } from "./ui/form/BallSelect";
@@ -11,7 +11,7 @@ import { Button } from "./ui/Button";
 
 export function FilterBar() {
   const search = Route.useSearch();
-  const navigate = useNavigate({ from: "/collection" });
+  const navigate = useNavigate({ from: "/" });
   const { data: filterOptions } = usePokemonFilters();
 
   const [searchText, setSearchText] = useState(search.search ?? "");

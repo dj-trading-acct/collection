@@ -12,7 +12,6 @@ const collectionDataSchema = z.object({
     version: z.number(),
     github_username: z.string(),
     display_name: z.string(),
-    next_id: z.number().int(),
   }),
   pokemon: z.array(pokemonSchema),
 });
@@ -35,8 +34,28 @@ const ALLOWED_SORT_COLUMNS = [
   "is_event",
 ];
 
+const ALPHANUMERIC = 'abcdefghijklmnopqrstuvwxyz0123456789';
+const ID_LENGTH = 4;
+
+function generateId(): string {
+  let id = '';
+  for (let i = 0; i < ID_LENGTH; i++) {
+    id += ALPHANUMERIC[Math.floor(Math.random() * ALPHANUMERIC.length)];
+  }
+  return id;
+}
+
+function generateUniqueId(): string {
+  const existingIds = new Set(data.pokemon.map((p) => p.id));
+  let id = generateId();
+  while (existingIds.has(id)) {
+    id = generateId();
+  }
+  return id;
+}
+
 let data: CollectionData = {
-  meta: { version: 1, github_username: "", display_name: "", next_id: 1 },
+  meta: { version: 1, github_username: "", display_name: "" },
   pokemon: [],
 };
 
@@ -63,10 +82,10 @@ export async function loadCollection(): Promise<void> {
         throw new Error(`Failed to load collection: ${res.status} ${res.statusText}`);
       }
       loaded = true;
-    } catch {
+    } catch (e) {
       // Reset so a subsequent call can retry
       loadPromise = null;
-      throw new Error("Failed to load collection data");
+      throw new Error("Failed to load collection data", { cause: e });
     }
   })();
 
@@ -174,7 +193,7 @@ export function getAll(filters: Partial<PokemonFilters> = {}): Pokemon[] {
   return sortPokemon(filtered, filters.sort_by, filters.sort_order);
 }
 
-export function getById(id: number): Pokemon | undefined {
+export function getById(id: string): Pokemon | undefined {
   ensureLoaded();
   return data.pokemon.find((p) => p.id === id);
 }
@@ -184,7 +203,7 @@ export function create(input: CreatePokemon): Pokemon {
   const now = new Date().toISOString();
   const pokemon: Pokemon = {
     ...input,
-    id: data.meta.next_id++,
+    id: generateUniqueId(),
     created_at: now,
     updated_at: now,
   };
@@ -192,7 +211,7 @@ export function create(input: CreatePokemon): Pokemon {
   return pokemon;
 }
 
-export function update(id: number, input: UpdatePokemon): Pokemon {
+export function update(id: string, input: UpdatePokemon): Pokemon {
   ensureLoaded();
   const parsed = updatePokemonSchema.safeParse(input);
   if (!parsed.success) {
@@ -215,7 +234,7 @@ export function update(id: number, input: UpdatePokemon): Pokemon {
   return updated;
 }
 
-export function remove(id: number): void {
+export function remove(id: string): void {
   ensureLoaded();
   const idx = data.pokemon.findIndex((p) => p.id === id);
   if (idx === -1) throw new Error(`Pokemon ${id} not found`);

@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { createFileRoute, Link, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, Link, useNavigate, notFound } from '@tanstack/react-router';
+import { z } from 'zod';
 import { usePokemon } from '../../../api/queries';
 import { useDeletePokemon } from '../../../api/mutations';
 import { PokemonPreview } from '../../../components/PokemonForm';
@@ -9,16 +10,22 @@ import { Button } from '../../../components/ui/Button';
 import { GAME_LOCATIONS } from '../../../data/constants';
 import { getSpeciesInfo, getShowdownSpriteUrl, getBallSpriteUrl } from '../../../data/pokemon-dex';
 
-export const Route = createFileRoute('/collection/$pokemonId/')({
+const pokemonIdParam = z.string().regex(/^[a-z0-9]{4}$/);
+
+export const Route = createFileRoute('/pokemon/$pokemonId/')({
+  beforeLoad: ({ params }) => {
+    const result = pokemonIdParam.safeParse(params.pokemonId);
+    if (!result.success) {
+      throw notFound();
+    }
+  },
   component: PokemonDetailPage,
 });
 
 function PokemonDetailPage() {
   const { pokemonId } = Route.useParams();
   const navigate = useNavigate();
-  const id = Number(pokemonId);
-  const isInvalidId = Number.isNaN(id);
-  const { data: pokemon, isLoading, isError } = usePokemon(id, { enabled: !isInvalidId });
+  const { data: pokemon, isLoading, isError } = usePokemon(pokemonId);
   const deleteMutation = useDeletePokemon();
   const stickyOffset = useStickyOffset();
 
@@ -30,7 +37,7 @@ function PokemonDetailPage() {
     if (!confirmed) return;
     deleteMutation.mutate(pokemon.id, {
       onSuccess: () => {
-        navigate({ to: '/collection' });
+        navigate({ to: '/' });
       },
     });
   }
@@ -56,7 +63,7 @@ function PokemonDetailPage() {
     return <LoadingSpinner />;
   }
 
-  if (isInvalidId || isError || !pokemon) {
+  if (isError || !pokemon) {
     return <NotFound />;
   }
 
@@ -65,7 +72,7 @@ function PokemonDetailPage() {
       <PageHeader>
         <div className="flex items-center justify-between min-h-[38px]">
           <Link
-            to="/collection"
+            to="/"
             className="text-sm text-blue-600 hover:text-blue-800"
           >
             &larr; Back to Collection
@@ -74,7 +81,7 @@ function PokemonDetailPage() {
             <Button type="button" variant="danger" rank="secondary" onClick={handleDelete} disabled={deleteMutation.isPending}>
               {deleteMutation.isPending ? 'Deleting...' : 'Delete'}
             </Button>
-            <Link to="/collection/$pokemonId/edit" params={{ pokemonId }}>
+            <Link to="/pokemon/$pokemonId/edit" params={{ pokemonId }}>
               <Button type="button">
                 Edit
               </Button>

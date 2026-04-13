@@ -22,7 +22,7 @@ export function useUpdatePokemon() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async ({ id, data }: { id: number; data: UpdatePokemon }): Promise<Pokemon> => {
+    mutationFn: async ({ id, data }: { id: string; data: UpdatePokemon }): Promise<Pokemon> => {
       await loadCollection();
       return update(id, data);
     },
@@ -38,7 +38,7 @@ export function useDeletePokemon() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (id: number): Promise<void> => {
+    mutationFn: async (id: string): Promise<void> => {
       await loadCollection();
       remove(id);
     },

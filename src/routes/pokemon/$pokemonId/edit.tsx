@@ -1,33 +1,40 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, useNavigate, notFound } from '@tanstack/react-router';
+import { z } from 'zod';
 import { usePokemon } from '../../../api/queries';
 import { PokemonForm } from '../../../components/PokemonForm';
 import { LoadingSpinner, NotFound, PageHeader } from '../../../components/layout';
 import { Button } from '../../../components/ui/Button';
 
-export const Route = createFileRoute('/collection/$pokemonId/edit')({
+const pokemonIdParam = z.string().regex(/^[a-z0-9]{4}$/);
+
+export const Route = createFileRoute('/pokemon/$pokemonId/edit')({
+  beforeLoad: ({ params }) => {
+    const result = pokemonIdParam.safeParse(params.pokemonId);
+    if (!result.success) {
+      throw notFound();
+    }
+  },
   component: PokemonEditPage,
 });
 
 function PokemonEditPage() {
   const { pokemonId } = Route.useParams();
   const navigate = useNavigate();
-  const id = Number(pokemonId);
-  const isInvalidId = Number.isNaN(id);
-  const { data: pokemon, isLoading, isError } = usePokemon(id, { enabled: !isInvalidId });
+  const { data: pokemon, isLoading, isError } = usePokemon(pokemonId);
 
   function handleCancel() {
-    navigate({ to: '/collection/$pokemonId', params: { pokemonId } });
+    navigate({ to: '/pokemon/$pokemonId', params: { pokemonId } });
   }
 
   function handleSuccess() {
-    navigate({ to: '/collection/$pokemonId', params: { pokemonId } });
+    navigate({ to: '/pokemon/$pokemonId', params: { pokemonId } });
   }
 
   if (isLoading) {
     return <LoadingSpinner />;
   }
 
-  if (isInvalidId || isError || !pokemon) {
+  if (isError || !pokemon) {
     return <NotFound />;
   }
 

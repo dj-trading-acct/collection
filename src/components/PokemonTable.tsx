@@ -46,7 +46,7 @@ export function PokemonTable({
   hasFilters,
   onClearFilters,
 }: PokemonTableProps) {
-  const navigate = useNavigate({ from: "/collection" });
+  const navigate = useNavigate({ from: "/" });
 
   const handleSort = (columnKey: string) => {
     if (columnKey === sortBy) {
@@ -149,12 +149,12 @@ export function PokemonTable({
               tabIndex={0}
               role="link"
               onClick={() =>
-                navigate({ to: '/collection/$pokemonId', params: { pokemonId: String(p.id) } })
+                navigate({ to: '/pokemon/$pokemonId', params: { pokemonId: p.id } })
               }
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
                   e.preventDefault();
-                  navigate({ to: '/collection/$pokemonId', params: { pokemonId: String(p.id) } });
+                  navigate({ to: '/pokemon/$pokemonId', params: { pokemonId: p.id } });
                 }
               }}
             >

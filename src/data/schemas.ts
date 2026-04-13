@@ -15,7 +15,7 @@ const languageTagEnum = z.enum([
 ]);
 
 export const pokemonSchema = z.object({
-  id: z.number(),
+  id: z.string(),
   species: z.string(),
   dex_number: z.number().int(),
   form: z.string().nullable().optional(),

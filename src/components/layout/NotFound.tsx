@@ -8,7 +8,7 @@ export function NotFound() {
         The Pokemon you are looking for does not exist or has been removed.
       </p>
       <Link
-        to="/collection"
+        to="/"
         className="text-blue-600 hover:text-blue-800 font-medium"
       >
         Back to Collection

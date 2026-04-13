@@ -14,7 +14,7 @@ export function usePokemonList(filters: Partial<PokemonFilters> = {}) {
   });
 }
 
-export function usePokemon(id: number, options?: { enabled?: boolean }) {
+export function usePokemon(id: string, options?: { enabled?: boolean }) {
   return useQuery({
     queryKey: pokemonKeys.detail(id),
     queryFn: async () => {
