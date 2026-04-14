@@ -272,7 +272,7 @@ export function PokemonForm({ pokemon, formId, onSuccess }: PokemonFormProps) {
 
   const sectionClass = 'space-y-4';
   const sectionTitleClass =
-    'sticky z-[5] pt-6 -mt-6 bg-gray-50 text-lg font-semibold text-gray-800 border-b pb-1';
+    'sticky z-[5] pt-2 bg-gray-50 text-lg font-semibold text-gray-800 border-b pb-1';
 
   const ballSpriteUrl = pokeBall ? getBallSpriteUrl(pokeBall) : '';
   const locationBoxArt = useMemo(
@@ -288,7 +288,7 @@ export function PokemonForm({ pokemon, formId, onSuccess }: PokemonFormProps) {
         e.stopPropagation();
         form.handleSubmit();
       }}
-      className="space-y-8"
+      className="space-y-6"
     >
       <PageHeader>
         <Card className="px-4 py-3">

@@ -1,5 +1,6 @@
 import { useState, useSyncExternalStore } from "react";
-import { getChanges, hasChanges, clearChanges, subscribe } from "../store/pendingChanges";
+import { getChanges, getMetaChanges, hasChanges, clearChanges, subscribe } from "../store/pendingChanges";
+import { useAuth } from "../auth/AuthContext";
 import { ChangelogModal } from "./ChangelogModal";
 import { Button } from "./ui/Button";
 
@@ -10,16 +11,17 @@ function useHasChanges() {
 function useChangeCount() {
   return useSyncExternalStore(
     subscribe,
-    () => getChanges().length,
+    () => getChanges().length + getMetaChanges().length,
   );
 }
 
 export function SaveBar() {
   const show = useHasChanges();
   const count = useChangeCount();
+  const { user, isOwner } = useAuth();
   const [showModal, setShowModal] = useState(false);
 
-  if (!show) return null;
+  if (!show || !user || !isOwner) return null;
 
   function handleDiscard() {
     if (window.confirm("Discard all unsaved changes? This will reload the page.")) {

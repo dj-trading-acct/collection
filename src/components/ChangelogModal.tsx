@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../auth/AuthContext";
-import { getChanges, getChangeSummary, clearChanges, type PendingChange } from "../store/pendingChanges";
+import { getChanges, getMetaChanges, getChangeSummary, clearChanges, type PendingChange } from "../store/pendingChanges";
 import { getFileContent, commitFile } from "../api/github";
 import { toJSON } from "../store/collection";
 import { Button } from "./ui/Button";
@@ -66,12 +66,20 @@ export function ChangelogModal({ onClose }: { onClose: () => void }) {
   const [success, setSuccess] = useState(false);
 
   const changes = getChanges();
+  const meta = getMetaChanges();
   const added = changes.filter((c) => c.type === "add");
   const updated = changes.filter((c) => c.type === "update");
   const deleted = changes.filter((c) => c.type === "delete");
 
   async function handleSave() {
-    if (!token || !repo) return;
+    if (!token) {
+      setError("Not authenticated. Please sign in again.");
+      return;
+    }
+    if (!repo) {
+      setError("Could not detect GitHub repository. Saving is only available when deployed to GitHub Pages.");
+      return;
+    }
     setIsSaving(true);
     setError(null);
 
@@ -87,7 +95,12 @@ export function ChangelogModal({ onClose }: { onClose: () => void }) {
       setSuccess(true);
       setTimeout(onClose, 1500);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Failed to save");
+      const msg = e instanceof Error ? e.message : "Failed to save";
+      if (msg.includes("401")) {
+        setError("Your GitHub token has expired or been revoked. Please sign out and sign in again.");
+      } else {
+        setError(msg);
+      }
     } finally {
       setIsSaving(false);
     }
@@ -117,6 +130,23 @@ export function ChangelogModal({ onClose }: { onClose: () => void }) {
           ) : (
             <>
               <div className="space-y-4">
+                {meta.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-semibold text-blue-700 mb-1">
+                      Settings ({meta.length})
+                    </h3>
+                    <ul className="space-y-1">
+                      {meta.map((c) => (
+                        <li key={c.field} className="flex items-center gap-2">
+                          <span className="text-blue-600 font-mono text-xs">~</span>
+                          <span className="text-sm">
+                            Changed {c.label} from <strong>{c.from}</strong> to <strong>{c.to}</strong>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {added.length > 0 && (
                   <div>
                     <h3 className="text-sm font-semibold text-green-700 mb-1">

@@ -1,9 +1,10 @@
-import { createContext, useContext, useRef, useState, useCallback, useSyncExternalStore } from "react";
+import { createContext, useContext, useEffect, useRef, useState, useCallback, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "@tanstack/react-router";
 import { useCollectionOwner } from "../../api/queries";
 import { useAuth } from "../../auth/AuthContext";
 import { SetupGuide } from "../SetupGuide";
+import { EditNameModal } from "../EditNameModal";
 import { SaveBar } from "../SaveBar";
 import { hasChanges, subscribe } from "../../store/pendingChanges";
 
@@ -24,7 +25,15 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
   const { data: ownerName } = useCollectionOwner();
   const { user, isOwner, logout, isLoading: authLoading } = useAuth();
   const [showSetup, setShowSetup] = useState(false);
-  const showSaveBar = user && isOwner && useSyncExternalStore(subscribe, hasChanges);
+  const [showEditName, setShowEditName] = useState(false);
+  const pendingChanges = useSyncExternalStore(subscribe, hasChanges);
+  const showSaveBar = user && isOwner && pendingChanges;
+
+  useEffect(() => {
+    document.title = ownerName
+      ? `${ownerName}'s Collection`
+      : "Pokemon Collection";
+  }, [ownerName]);
   const [headerEl, setHeaderEl] = useState<HTMLDivElement | null>(null);
   const observerRef = useRef<MutationObserver | null>(null);
   const [hasContent, setHasContent] = useState(false);
@@ -71,9 +80,22 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
         <nav className="flex-shrink-0 bg-white shadow-sm border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 py-3">
             <div className="flex items-center justify-between">
-              <Link to="/" className="text-xl font-bold text-gray-900">
-                {ownerName ? `${ownerName}'s Collection` : "Pokemon Collection"}
-              </Link>
+              <div className="flex items-center gap-2">
+                <Link to="/" className="text-xl font-bold text-gray-900">
+                  {ownerName ? `${ownerName}'s Collection` : "Pokemon Collection"}
+                </Link>
+                {user && isOwner && (
+                  <button
+                    onClick={() => setShowEditName(true)}
+                    className="text-gray-400 hover:text-gray-600 transition-colors"
+                    title="Edit collection name"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                      <path d="M2.695 14.763l-1.262 3.154a.5.5 0 00.65.65l3.155-1.262a4 4 0 001.343-.885L17.5 5.5a2.121 2.121 0 00-3-3L3.58 13.42a4 4 0 00-.885 1.343z" />
+                    </svg>
+                  </button>
+                )}
+              </div>
               <div className="flex items-center gap-3">
                 {user && isOwner ? (
                   <>
@@ -121,6 +143,7 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
       </div>
       {showSaveBar && <SaveBar />}
       {showSetup && <SetupGuide onClose={() => setShowSetup(false)} />}
+      {showEditName && <EditNameModal onClose={() => setShowEditName(false)} />}
     </PageHeaderPortalContext.Provider>
   );
 }

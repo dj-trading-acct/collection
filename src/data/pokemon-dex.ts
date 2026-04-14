@@ -10,7 +10,7 @@ export interface SpeciesInfo {
 // Build a cached list of all base species for typeahead
 const allBaseSpecies = Dex.species
   .all()
-  .filter((s) => !s.isNonstandard && !s.forme)
+  .filter((s) => (!s.isNonstandard || s.isNonstandard === 'Past') && !s.forme)
   .map((s) => ({ name: s.name, num: s.num }))
   .sort((a, b) => a.num - b.num);
 

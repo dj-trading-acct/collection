@@ -6,7 +6,15 @@ export interface PendingChange {
   previous?: Pokemon;
 }
 
+export interface MetaChange {
+  field: string;
+  label: string;
+  from: string;
+  to: string;
+}
+
 let changes: PendingChange[] = [];
+let metaChanges: MetaChange[] = [];
 let listeners: Array<() => void> = [];
 
 function notify() {
@@ -22,6 +30,24 @@ export function subscribe(listener: () => void): () => void {
 
 export function getChanges(): PendingChange[] {
   return changes;
+}
+
+export function getMetaChanges(): MetaChange[] {
+  return metaChanges;
+}
+
+export function addMetaChange(change: MetaChange): void {
+  const existing = metaChanges.find((c) => c.field === change.field);
+  if (existing) {
+    existing.to = change.to;
+    // If reverted to original value, remove the change
+    if (existing.from === existing.to) {
+      metaChanges = metaChanges.filter((c) => c.field !== change.field);
+    }
+  } else {
+    metaChanges.push(change);
+  }
+  notify();
 }
 
 export function addChange(change: PendingChange): void {
@@ -75,11 +101,12 @@ export function addChange(change: PendingChange): void {
 
 export function clearChanges(): void {
   changes = [];
+  metaChanges = [];
   notify();
 }
 
 export function hasChanges(): boolean {
-  return changes.length > 0;
+  return changes.length > 0 || metaChanges.length > 0;
 }
 
 export function getChangeSummary(): string {
@@ -88,6 +115,9 @@ export function getChangeSummary(): string {
   const deleted = changes.filter((c) => c.type === "delete");
 
   const parts: string[] = [];
+  if (metaChanges.length) {
+    parts.push(`changed ${metaChanges.map((c) => c.label).join(", ")}`);
+  }
   if (added.length) {
     parts.push(`added ${added.map((c) => c.pokemon.nickname ?? c.pokemon.species).join(", ")}`);
   }
