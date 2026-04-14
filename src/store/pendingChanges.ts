@@ -109,6 +109,13 @@ export function hasChanges(): boolean {
   return changes.length > 0 || metaChanges.length > 0;
 }
 
+/** @internal */
+export function _resetForTesting(): void {
+  changes = [];
+  metaChanges = [];
+  listeners = [];
+}
+
 export function getChangeSummary(): string {
   const added = changes.filter((c) => c.type === "add");
   const updated = changes.filter((c) => c.type === "update");

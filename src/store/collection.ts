@@ -289,3 +289,20 @@ export function toJSON(): string {
   ensureLoaded();
   return JSON.stringify(data, null, 2);
 }
+
+/** @internal — only for tests */
+export function _resetForTesting(): void {
+  data = { meta: { version: 1, display_name: "" }, pokemon: [] };
+  loaded = false;
+  loadPromise = null;
+}
+
+/** @internal — directly set data for tests */
+export function _loadForTesting(input: {
+  meta: { version: number; display_name: string };
+  pokemon: Pokemon[];
+}): void {
+  data = input;
+  loaded = true;
+  loadPromise = null;
+}
