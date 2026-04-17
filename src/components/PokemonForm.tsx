@@ -177,11 +177,8 @@ function buildDefaultValues(pokemon?: Pokemon): FormValues {
   };
 }
 
-/** Fields that are preserved when using "Add & Add Another" */
-const STICKY_FIELDS = [
-  'ot_name', 'ot_tid', 'language_tag', 'origin_mark',
-  'current_location', 'poke_ball',
-] as const;
+/** Fields that are reset when using "Submit & Add Another" (everything else is preserved) */
+const RESET_FIELDS = ['species', 'dex_number', 'form', 'nickname', 'ability', 'is_hidden_ability', 'ribbons_and_marks'] as const;
 
 export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAnother }: PokemonFormProps) {
   const isEdit = !!pokemon;
@@ -221,12 +218,11 @@ export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAn
       } else if (mode === 'add-another') {
         createMutation.mutate(result.data, {
           onSuccess: () => {
-            // Build new defaults, keeping sticky fields from current values
+            // Reset only species-related fields; keep everything else
             const fresh = buildDefaultValues();
-            for (const key of STICKY_FIELDS) {
-              (fresh as any)[key] = value[key];
+            for (const key of RESET_FIELDS) {
+              form.setFieldValue(key, (fresh as any)[key]);
             }
-            form.reset(fresh);
 
             onAddAnother?.({ species: value.species, nickname: value.nickname });
           },
