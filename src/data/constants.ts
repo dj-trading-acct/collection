@@ -10,12 +10,12 @@ export const NATURES = [
 
 export const POKE_BALLS = [
   'Poke Ball', 'Great Ball', 'Ultra Ball', 'Master Ball',
-  'Safari Ball', 'Sport Ball', 'Level Ball', 'Lure Ball',
-  'Moon Ball', 'Friend Ball', 'Love Ball', 'Heavy Ball',
-  'Fast Ball', 'Dream Ball', 'Beast Ball', 'Premier Ball',
-  'Repeat Ball', 'Timer Ball', 'Nest Ball', 'Net Ball',
-  'Dive Ball', 'Luxury Ball', 'Heal Ball', 'Quick Ball',
-  'Dusk Ball', 'Cherish Ball', 'Park Ball',
+  'Beast Ball', 'Cherish Ball', 'Dive Ball', 'Dream Ball',
+  'Dusk Ball', 'Fast Ball', 'Friend Ball', 'Heal Ball',
+  'Heavy Ball', 'Level Ball', 'Love Ball', 'Lure Ball',
+  'Luxury Ball', 'Moon Ball', 'Nest Ball', 'Net Ball',
+  'Park Ball', 'Premier Ball', 'Quick Ball', 'Repeat Ball',
+  'Safari Ball', 'Sport Ball', 'Timer Ball',
 ] as const;
 
 export const LANGUAGES = [

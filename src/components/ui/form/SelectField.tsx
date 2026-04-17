@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { assetUrl } from '../../../assetUrl';
 
+function resolveImageUrl(url: string): string {
+  // Already-absolute URLs (external sprites, etc.) should not be prefixed
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  return assetUrl(url);
+}
+
 export interface SelectOption {
   value: string;
   label: string;
@@ -99,6 +105,7 @@ function ImageSelect({
 }) {
   const [open, setOpen] = useState(false);
   const [focusIndex, setFocusIndex] = useState(-1);
+  const focusSourceRef = useRef<'keyboard' | 'mouse'>('keyboard');
   const containerRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const typeaheadRef = useRef('');
@@ -123,11 +130,13 @@ function ImageSelect({
     return () => document.removeEventListener('mousedown', handler);
   }, [open, close]);
 
-  // Scroll focused item into view
+  // Scroll focused item into view (only for keyboard-driven focus changes)
   useEffect(() => {
     if (!open || focusIndex < 0 || !listRef.current) return;
+    if (focusSourceRef.current !== 'keyboard') return;
     const items = listRef.current.children;
-    items[focusIndex]?.scrollIntoView({ block: 'nearest' });
+    // +1 to skip the placeholder <li> at index 0
+    items[focusIndex + 1]?.scrollIntoView({ block: 'nearest' });
   }, [focusIndex, open]);
 
   function handleKeyDown(e: React.KeyboardEvent) {
@@ -136,6 +145,7 @@ function ImageSelect({
       if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
         e.preventDefault();
         setOpen(true);
+        focusSourceRef.current = 'keyboard';
         setFocusIndex(options.findIndex((o) => o.value === value));
       }
       return;
@@ -143,10 +153,12 @@ function ImageSelect({
     switch (e.key) {
       case 'ArrowDown':
         e.preventDefault();
+        focusSourceRef.current = 'keyboard';
         setFocusIndex((i) => Math.min(i + 1, options.length - 1));
         break;
       case 'ArrowUp':
         e.preventDefault();
+        focusSourceRef.current = 'keyboard';
         setFocusIndex((i) => Math.max(i - 1, 0));
         break;
       case 'Enter':
@@ -173,6 +185,7 @@ function ImageSelect({
           );
           if (match >= 0) {
             if (open) {
+              focusSourceRef.current = 'keyboard';
               setFocusIndex(match);
             } else {
               onChange(options[match].value);
@@ -203,7 +216,7 @@ function ImageSelect({
         <span className="flex items-center gap-2 truncate">
           {selected?.image && (
             <img
-              src={assetUrl(selected.image)}
+              src={resolveImageUrl(selected.image)}
               alt=""
               className={'w-5 h-5 flex-shrink-0' + (imageClassName ? ' ' + imageClassName : '')}
               onError={(e) => {
@@ -237,7 +250,7 @@ function ImageSelect({
               !value ? 'bg-blue-50 text-blue-700' : 'text-gray-400 hover:bg-gray-50',
               focusIndex === -1 ? 'bg-gray-100' : '',
             ].join(' ')}
-            onMouseEnter={() => setFocusIndex(-1)}
+            onMouseEnter={() => { focusSourceRef.current = 'mouse'; setFocusIndex(-1); }}
             onClick={() => {
               onChange('');
               close();
@@ -258,7 +271,7 @@ function ImageSelect({
                   isSelected ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-900',
                   isFocused ? 'bg-gray-100' : 'hover:bg-gray-50',
                 ].join(' ')}
-                onMouseEnter={() => setFocusIndex(i)}
+                onMouseEnter={() => { focusSourceRef.current = 'mouse'; setFocusIndex(i); }}
                 onClick={() => {
                   onChange(option.value);
                   close();
@@ -266,7 +279,7 @@ function ImageSelect({
               >
                 {option.image && (
                   <img
-                    src={assetUrl(option.image)}
+                    src={resolveImageUrl(option.image)}
                     alt=""
                     className={'w-5 h-5 flex-shrink-0' + (imageClassName ? ' ' + imageClassName : '')}
                           onError={(e) => {
