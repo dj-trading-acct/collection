@@ -2,7 +2,7 @@ import type React from "react";
 import { useRef } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import type { Pokemon } from "../data/types";
-import { Badge, BADGE_ICONS } from "./ui/Badge";
+import { Badge, BADGE_ICONS, OriginMarkBadge } from "./ui/Badge";
 import { Sprite } from "./ui/Sprite";
 import { getBallSpriteUrl } from "../data/pokemon-dex";
 import { assetUrl } from "../assetUrl";
@@ -262,9 +262,14 @@ export function PokemonTable({
                 </span>
               </td>
               <td className="px-3 py-1 text-sm text-gray-600">
-                {p.ot_name || p.ot_tid
-                  ? [p.ot_name, p.ot_tid].filter(Boolean).join("/")
-                  : "-"}
+                {p.ot_name || p.ot_tid || p.origin_mark ? (
+                  <span className="inline-flex items-center gap-1.5">
+                    {p.ot_name || p.ot_tid
+                      ? [p.ot_name, p.ot_tid].filter(Boolean).join("/")
+                      : null}
+                    {p.origin_mark && <OriginMarkBadge value={p.origin_mark} showLabel={false} />}
+                  </span>
+                ) : "-"}
               </td>
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.tags && p.tags.length > 0 ? (
