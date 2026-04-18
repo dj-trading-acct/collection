@@ -5,6 +5,7 @@ import type { Pokemon } from "../data/types";
 import { Badge, BADGE_ICONS } from "./ui/Badge";
 import { Sprite } from "./ui/Sprite";
 import { getBallSpriteUrl } from "../data/pokemon-dex";
+import { assetUrl } from "../assetUrl";
 
 interface PokemonTableProps {
   pokemon: Pokemon[];
@@ -256,7 +257,7 @@ export function PokemonTable({
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.poke_ball ? (
                   <img
-                    src={getBallSpriteUrl(p.poke_ball)}
+                    src={assetUrl(getBallSpriteUrl(p.poke_ball))}
                     alt={p.poke_ball}
                     title={p.poke_ball}
                     className="w-5 h-5"

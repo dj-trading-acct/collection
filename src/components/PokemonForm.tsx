@@ -306,7 +306,7 @@ export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAn
   const sectionTitleClass =
     'sticky z-[5] pt-2 bg-gray-50 text-lg font-semibold text-gray-800 border-b pb-1';
 
-  const ballSpriteUrl = pokeBall ? getBallSpriteUrl(pokeBall) : '';
+  const ballSpriteUrl = pokeBall ? assetUrl(getBallSpriteUrl(pokeBall)) : '';
   const locationBoxArt = useMemo(
     () => GAME_LOCATIONS.find((g) => g.name === currentLocation)?.boxArt ?? null,
     [currentLocation],

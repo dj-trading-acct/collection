@@ -54,7 +54,7 @@ function PokemonDetailPage() {
     [speciesInfo, pokemon?.form, pokemon?.is_shiny],
   );
   const ballSpriteUrl = useMemo(
-    () => (pokemon?.poke_ball ? getBallSpriteUrl(pokemon.poke_ball) : ''),
+    () => (pokemon?.poke_ball ? assetUrl(getBallSpriteUrl(pokemon.poke_ball)) : ''),
     [pokemon?.poke_ball],
   );
   const locationBoxArt = useMemo(
