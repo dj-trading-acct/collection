@@ -28,9 +28,8 @@ interface Column {
 
 const COLUMNS: Column[] = [
   { key: "sprite", label: "#", sortable: true, sortKey: "dex_number" },
-  { key: "species", label: "Species", sortable: true },
-  { key: "nickname", label: "Nickname", sortable: true },
   { key: "poke_ball", label: "Ball", sortable: true },
+  { key: "species", label: "Name", sortable: true },
   { key: "ot_name", label: "OT/TID", sortable: true },
   { key: "tags", label: "Tags", sortable: false },
 ];
@@ -240,20 +239,6 @@ export function PokemonTable({
               <td className="pl-3 pr-1 py-0">
                 <Sprite dexNumber={p.dex_number} shiny={p.is_shiny} size={48} />
               </td>
-              <td className="px-3 py-1 text-sm text-gray-900 font-medium whitespace-nowrap">
-                <span className="inline-flex items-center gap-1.5">
-                  {p.species}
-                  {p.gender === "Male" && <span className="text-[rgb(73,159,255)]">♂</span>}
-                  {p.gender === "Female" && <span className="text-[rgb(246,129,74)]">♀</span>}
-                  {p.is_available_for_trade && <Badge variant="trade" icon={BADGE_ICONS.trade} iconOnly />}
-                  {p.is_shiny && <Badge variant="shiny" icon={BADGE_ICONS.shiny} iconOnly />}
-                  {p.is_event && <Badge variant="event" icon={BADGE_ICONS.event} iconOnly />}
-                  {p.is_alpha && <Badge variant="alpha" icon={BADGE_ICONS.alpha} iconOnly />}
-                </span>
-              </td>
-              <td className="px-3 py-1 text-sm text-gray-600">
-                {p.nickname ?? "-"}
-              </td>
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.poke_ball ? (
                   <img
@@ -264,6 +249,17 @@ export function PokemonTable({
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                 ) : "-"}
+              </td>
+              <td className="px-3 py-1 text-sm text-gray-900 font-medium whitespace-nowrap">
+                <span className="inline-flex items-center gap-1.5">
+                  {p.nickname ?? p.species}
+                  {p.gender === "Male" && <span className="text-[rgb(73,159,255)]">♂</span>}
+                  {p.gender === "Female" && <span className="text-[rgb(246,129,74)]">♀</span>}
+                  {p.is_available_for_trade && <Badge variant="trade" icon={BADGE_ICONS.trade} iconOnly />}
+                  {p.is_shiny && <Badge variant="shiny" icon={BADGE_ICONS.shiny} iconOnly />}
+                  {p.is_event && <Badge variant="event" icon={BADGE_ICONS.event} iconOnly />}
+                  {p.is_alpha && <Badge variant="alpha" icon={BADGE_ICONS.alpha} iconOnly />}
+                </span>
               </td>
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.ot_name || p.ot_tid

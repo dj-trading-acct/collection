@@ -128,7 +128,18 @@ export function PageLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </nav>
-        <main className="flex-1 overflow-y-auto">
+        <main
+          className="flex-1 overflow-y-auto"
+          ref={useCallback((node: HTMLElement | null) => {
+            if (!node) return;
+            let timer: ReturnType<typeof setTimeout>;
+            node.addEventListener('scroll', () => {
+              node.classList.add('is-scrolling');
+              clearTimeout(timer);
+              timer = setTimeout(() => node.classList.remove('is-scrolling'), 1000);
+            }, { passive: true });
+          }, [])}
+        >
           <div
             ref={headerWrapperCallback}
             className={`${hasContent ? "sticky top-0 z-30 bg-gray-50" : ""}`}

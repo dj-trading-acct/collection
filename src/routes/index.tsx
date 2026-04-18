@@ -126,7 +126,12 @@ function CollectionPage() {
   return (
     <div>
       <PageHeader>
-        <div className="flex items-center justify-end min-h-[38px]">
+        <div className="flex items-center justify-between min-h-[38px]">
+          {!isLoading && (
+            <span className="text-sm text-gray-500">
+              Showing {pokemon.length} of {allPokemon.data?.length ?? 0} Pok&eacute;mon
+            </span>
+          )}
           {canEdit && (
             <Link to="/p/new">
               <Button type="button">
