@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useQuery, queryOptions } from "@tanstack/react-query";
 import { pokemonKeys, collectionKeys } from "./queryKeys";
-import { getAllRaw, getFilterOptions, getOwnerName, loadCollection, matchesFilters, sortPokemon } from "../store/collection";
+import { getAllRaw, getFilterOptions, getOwnerName, getTrainerProfiles, loadCollection, matchesFilters, sortPokemon } from "../store/collection";
 import type { Pokemon, PokemonFilters } from "../data/types";
 
 const allPokemonOptions = queryOptions({
@@ -38,6 +38,17 @@ export function usePokemonFilters() {
     queryFn: async () => {
       await loadCollection();
       return getFilterOptions();
+    },
+    staleTime: Infinity,
+  });
+}
+
+export function useTrainerProfiles() {
+  return useQuery({
+    queryKey: pokemonKeys.trainerProfiles(),
+    queryFn: async () => {
+      await loadCollection();
+      return getTrainerProfiles();
     },
     staleTime: Infinity,
   });

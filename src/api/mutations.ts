@@ -16,8 +16,7 @@ export function useCreatePokemon() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -36,8 +35,7 @@ export function useUpdatePokemon() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -57,8 +55,7 @@ export function useDeletePokemon() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -87,8 +84,7 @@ export function useBulkUpdatePokemon() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -107,8 +103,7 @@ export function useBulkDeletePokemon() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -135,8 +130,7 @@ export function useBulkAddTag() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -163,8 +157,7 @@ export function useBulkRemoveTag() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });
@@ -183,8 +176,7 @@ export function useDeleteByTag() {
     },
     onSettled: () => {
       return Promise.all([
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.list() }),
-        queryClient.invalidateQueries({ queryKey: pokemonKeys.filters() }),
+        queryClient.invalidateQueries({ queryKey: pokemonKeys.all() }),
       ]);
     },
   });

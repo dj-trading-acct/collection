@@ -285,6 +285,34 @@ export function removeByTag(tag: string): Pokemon[] {
   return removed;
 }
 
+// ---- Trainer profiles (derived from existing pokemon) ----
+
+export interface TrainerProfile {
+  ot_name: string;
+  ot_tid: string;
+  language_tag: string;
+  origin_mark: string;
+}
+
+export function getTrainerProfiles(): TrainerProfile[] {
+  ensureLoaded();
+  const seen = new Set<string>();
+  const profiles: TrainerProfile[] = [];
+  for (const p of data.pokemon) {
+    if (!p.ot_name && !p.ot_tid) continue;
+    const key = [p.ot_name ?? '', p.ot_tid ?? '', p.language_tag ?? '', p.origin_mark ?? ''].join('\0');
+    if (seen.has(key)) continue;
+    seen.add(key);
+    profiles.push({
+      ot_name: p.ot_name ?? '',
+      ot_tid: p.ot_tid ?? '',
+      language_tag: p.language_tag ?? '',
+      origin_mark: p.origin_mark ?? '',
+    });
+  }
+  return profiles.sort((a, b) => a.ot_name.localeCompare(b.ot_name) || a.origin_mark.localeCompare(b.origin_mark));
+}
+
 // ---- Filter options (replaces /api/pokemon/filters) ----
 
 export function getFilterOptions(): Record<string, string[]> {
@@ -310,6 +338,8 @@ export function getFilterOptions(): Record<string, string[]> {
     origin_mark: unique("origin_mark"),
     current_location: unique("current_location"),
     language_tag: unique("language_tag"),
+    ot_name: unique("ot_name"),
+    ot_tid: unique("ot_tid"),
     tags: [...tagSet].sort(),
   };
 }

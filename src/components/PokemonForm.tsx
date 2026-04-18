@@ -4,8 +4,8 @@ import { useStore } from '@tanstack/react-store';
 import type { Pokemon } from '../data/types';
 import { createPokemonSchema } from '../data/schemas';
 import { useCreatePokemon, useUpdatePokemon } from '../api/mutations';
-import { usePokemonFilters } from '../api/queries';
-import { NATURES, LANGUAGES, GENDERS, GAME_LOCATIONS } from '../data/constants';
+import { usePokemonFilters, useTrainerProfiles } from '../api/queries';
+import { NATURES, LANGUAGES, GENDERS, GAME_LOCATIONS, ORIGIN_MARKS } from '../data/constants';
 import { getSpeciesInfo, getShowdownSpriteUrl, getBallSpriteUrl, type SpeciesInfo } from '../data/pokemon-dex';
 import { Badge, BADGE_ICONS, OriginMarkBadge } from './ui/Badge';
 import { assetUrl } from '../assetUrl';
@@ -17,6 +17,7 @@ import { SelectField, type SelectOption } from './ui/form/SelectField';
 import { SpeciesTypeahead } from './ui/form/SpeciesTypeahead';
 import { TextField } from './ui/form/TextField';
 import { ChipInput } from './ui/form/ChipInput';
+import { TextTypeahead } from './ui/form/TextTypeahead';
 import { ALL_RIBBONS_AND_MARKS } from '../data/ribbons-marks';
 import { inputClass, labelClass, errorClass, selectClass } from './ui/form/styles';
 
@@ -186,8 +187,21 @@ export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAn
   const updateMutation = useUpdatePokemon();
   const { data: filterOptions } = usePokemonFilters();
   const existingTags = filterOptions?.tags ?? [];
+  const existingOtNames = filterOptions?.ot_name ?? [];
+  const existingOtTids = filterOptions?.ot_tid ?? [];
+  const { data: trainerProfiles = [] } = useTrainerProfiles();
+
+  const trainerProfileOptions = useMemo(() => {
+    const originMarkLabel = (value: string) =>
+      ORIGIN_MARKS.find((m) => m.value === value)?.label ?? value;
+    return trainerProfiles.map((p, i) => ({
+      value: String(i),
+      label: [p.ot_name, p.ot_tid, p.language_tag, p.origin_mark ? originMarkLabel(p.origin_mark) : ''].filter(Boolean).join(' / '),
+    }));
+  }, [trainerProfiles]);
   const isSubmitting = createMutation.isPending || updateMutation.isPending;
 
+  const [selectedProfileIndex, setSelectedProfileIndex] = useState('');
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
 
   const form = useForm({
@@ -542,14 +556,35 @@ export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAn
       {/* Origin */}
       <div className={sectionClass}>
         <div className={sectionTitleClass} style={{ top: stickyOffset }}>Origin</div>
+        {trainerProfileOptions.length > 0 && (
+          <div className="mb-4">
+            <SelectField
+              label="Trainer Profile"
+              options={trainerProfileOptions}
+              value={selectedProfileIndex}
+              onChange={(v) => {
+                setSelectedProfileIndex(v);
+                const profile = trainerProfiles[Number(v)];
+                if (profile) {
+                  form.setFieldValue('ot_name', profile.ot_name || null);
+                  form.setFieldValue('ot_tid', profile.ot_tid || null);
+                  form.setFieldValue('language_tag', profile.language_tag || null);
+                  form.setFieldValue('origin_mark', profile.origin_mark || null);
+                }
+              }}
+              placeholder="-- Select --"
+            />
+          </div>
+        )}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <form.Field name="ot_name">
               {(field) => (
-                <TextField
+                <TextTypeahead
                   label="OT Name"
                   value={field.state.value}
                   onChange={(v) => field.handleChange(v)}
+                  suggestions={existingOtNames}
                 />
               )}
             </form.Field>
@@ -557,10 +592,11 @@ export function PokemonForm({ pokemon, formId, onSuccess, submitModeRef, onAddAn
           <div>
             <form.Field name="ot_tid">
               {(field) => (
-                <TextField
+                <TextTypeahead
                   label="Trainer ID"
                   value={field.state.value}
                   onChange={(v) => field.handleChange(v)}
+                  suggestions={existingOtTids}
                 />
               )}
             </form.Field>
