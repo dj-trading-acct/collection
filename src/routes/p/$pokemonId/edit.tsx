@@ -34,7 +34,7 @@ function PokemonEditPage() {
   }
 
   function handleSuccess() {
-    navigate({ to: '/p/$pokemonId', params: { pokemonId } });
+    navigate({ to: '/' });
   }
 
   if (!canEdit) {

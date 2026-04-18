@@ -82,14 +82,14 @@ function PokemonDetailPage() {
           </Link>
           {canEdit && (
             <div className="flex items-center gap-3">
-              <Button type="button" variant="danger" rank="secondary" onClick={handleDelete} disabled={deleteMutation.isPending}>
-                {deleteMutation.isPending ? 'Deleting...' : 'Delete'}
-              </Button>
               <Link to="/p/$pokemonId/edit" params={{ pokemonId }}>
-                <Button type="button">
+                <Button type="button" rank="secondary">
                   Edit
                 </Button>
               </Link>
+              <Button type="button" variant="danger" onClick={handleDelete} disabled={deleteMutation.isPending}>
+                {deleteMutation.isPending ? 'Deleting...' : 'Delete'}
+              </Button>
             </div>
           )}
         </div>
