@@ -129,7 +129,7 @@ function toShowdownSpriteId(species: { baseSpecies: string; forme: string }): st
  */
 export function getBallSpriteUrl(ballName: string): string {
   const id = ballName.toLowerCase().replace(/\s+/g, '-');
-  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${id}.png`;
+  return `/balls/${id}.png`;
 }
 
 /** Map an origin mark value to its display label and region. */

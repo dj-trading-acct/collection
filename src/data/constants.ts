@@ -15,7 +15,7 @@ export const POKE_BALLS = [
   'Heavy Ball', 'Level Ball', 'Love Ball', 'Lure Ball',
   'Luxury Ball', 'Moon Ball', 'Nest Ball', 'Net Ball',
   'Park Ball', 'Premier Ball', 'Quick Ball', 'Repeat Ball',
-  'Safari Ball', 'Sport Ball', 'Timer Ball',
+  'Safari Ball', 'Sport Ball', 'Strange Ball', 'Timer Ball',
 ] as const;
 
 export const LANGUAGES = [
