@@ -1,18 +1,21 @@
+import { getShowdownSpriteUrl } from "../../data/pokemon-dex";
+
 interface SpriteProps {
-  dexNumber: number;
+  species: string;
+  form?: string | null;
   shiny?: boolean;
   size?: number;
   className?: string;
 }
 
-export function Sprite({ dexNumber, shiny = false, size = 32, className = "" }: SpriteProps) {
-  const baseUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
-  const url = shiny ? `${baseUrl}/shiny/${dexNumber}.png` : `${baseUrl}/${dexNumber}.png`;
+export function Sprite({ species, form, shiny = false, size = 32, className = "" }: SpriteProps) {
+  const url = getShowdownSpriteUrl(species, form || undefined, shiny);
+  const formLabel = form ? `-${form}` : "";
 
   return (
     <img
       src={url}
-      alt={`Pokemon #${dexNumber}${shiny ? " (shiny)" : ""}`}
+      alt={`${species}${formLabel}${shiny ? " (shiny)" : ""}`}
       width={size}
       height={size}
       className={`pixelated ${className}`}

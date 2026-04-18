@@ -237,7 +237,7 @@ export function PokemonTable({
                 </td>
               )}
               <td className="pl-3 pr-1 py-0">
-                <Sprite dexNumber={p.dex_number} shiny={p.is_shiny} size={48} />
+                <Sprite species={p.species} form={p.form} shiny={p.is_shiny} size={48} />
               </td>
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.poke_ball ? (
@@ -264,10 +264,10 @@ export function PokemonTable({
               <td className="px-3 py-1 text-sm text-gray-600">
                 {p.ot_name || p.ot_tid || p.origin_mark ? (
                   <span className="inline-flex items-center gap-1.5">
+                    {p.origin_mark && <OriginMarkBadge value={p.origin_mark} showLabel={false} />}
                     {p.ot_name || p.ot_tid
                       ? [p.ot_name, p.ot_tid].filter(Boolean).join("/")
                       : null}
-                    {p.origin_mark && <OriginMarkBadge value={p.origin_mark} showLabel={false} />}
                   </span>
                 ) : "-"}
               </td>
