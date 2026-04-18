@@ -428,6 +428,7 @@
       "updated_at": "2026-04-17T23:27:59.313Z"
     },
     {
+      "id": "n3fi",
       "species": "Ninetales",
       "dex_number": 38,
       "form": null,
@@ -451,11 +452,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "n3fi",
       "created_at": "2026-04-18T06:06:35.887Z",
       "updated_at": "2026-04-18T06:06:35.887Z"
     },
     {
+      "id": "xect",
       "species": "Meganium",
       "dex_number": 154,
       "form": null,
@@ -481,11 +482,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "xect",
       "created_at": "2026-04-18T06:08:43.102Z",
       "updated_at": "2026-04-18T06:08:43.102Z"
     },
     {
+      "id": "skhu",
       "species": "Ampharos",
       "dex_number": 181,
       "form": null,
@@ -511,11 +512,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "skhu",
       "created_at": "2026-04-18T06:09:33.865Z",
       "updated_at": "2026-04-18T06:09:33.865Z"
     },
     {
+      "id": "iinu",
       "species": "Umbreon",
       "dex_number": 197,
       "form": null,
@@ -539,11 +540,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "iinu",
       "created_at": "2026-04-18T06:10:56.200Z",
       "updated_at": "2026-04-18T06:10:56.200Z"
     },
     {
+      "id": "9np3",
       "species": "Heracross",
       "dex_number": 214,
       "form": null,
@@ -569,11 +570,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "9np3",
       "created_at": "2026-04-18T06:15:32.357Z",
       "updated_at": "2026-04-18T06:15:32.357Z"
     },
     {
+      "id": "0toy",
       "species": "Skarmory",
       "dex_number": 227,
       "form": null,
@@ -599,11 +600,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "0toy",
       "created_at": "2026-04-18T06:16:08.383Z",
       "updated_at": "2026-04-18T06:16:08.383Z"
     },
     {
+      "id": "4s3o",
       "species": "Porygon",
       "dex_number": 137,
       "form": null,
@@ -627,11 +628,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "4s3o",
       "created_at": "2026-04-18T06:16:38.698Z",
       "updated_at": "2026-04-18T06:16:38.698Z"
     },
     {
+      "id": "6xbr",
       "species": "Tyranitar",
       "dex_number": 248,
       "form": null,
@@ -657,11 +658,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "6xbr",
       "created_at": "2026-04-18T06:17:07.935Z",
       "updated_at": "2026-04-18T06:17:07.935Z"
     },
     {
+      "id": "jtcx",
       "species": "Sceptile",
       "dex_number": 254,
       "form": null,
@@ -687,11 +688,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "jtcx",
       "created_at": "2026-04-18T06:19:43.349Z",
       "updated_at": "2026-04-18T06:19:43.349Z"
     },
     {
+      "id": "r62z",
       "species": "Blaziken",
       "dex_number": 257,
       "form": null,
@@ -717,11 +718,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "r62z",
       "created_at": "2026-04-18T06:20:03.498Z",
       "updated_at": "2026-04-18T06:20:03.498Z"
     },
     {
+      "id": "wcwf",
       "species": "Blaziken",
       "dex_number": 257,
       "form": null,
@@ -747,11 +748,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "wcwf",
       "created_at": "2026-04-18T06:20:46.795Z",
       "updated_at": "2026-04-18T06:20:46.795Z"
     },
     {
+      "id": "w9oo",
       "species": "Swampert",
       "dex_number": 260,
       "form": null,
@@ -777,11 +778,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "w9oo",
       "created_at": "2026-04-18T06:22:37.713Z",
       "updated_at": "2026-04-18T06:22:37.713Z"
     },
     {
+      "id": "vaot",
       "species": "Gardevoir",
       "dex_number": 282,
       "form": null,
@@ -807,11 +808,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "vaot",
       "created_at": "2026-04-18T06:23:01.062Z",
       "updated_at": "2026-04-18T06:23:01.062Z"
     },
     {
+      "id": "njcp",
       "species": "Sableye",
       "dex_number": 302,
       "form": null,
@@ -837,11 +838,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "njcp",
       "created_at": "2026-04-18T06:24:06.396Z",
       "updated_at": "2026-04-18T06:24:06.396Z"
     },
     {
+      "id": "ru6o",
       "species": "Mawile",
       "dex_number": 303,
       "form": null,
@@ -867,11 +868,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "ru6o",
       "created_at": "2026-04-18T06:24:25.247Z",
       "updated_at": "2026-04-18T06:24:25.247Z"
     },
     {
+      "id": "388m",
       "species": "Medicham",
       "dex_number": 308,
       "form": null,
@@ -897,11 +898,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "388m",
       "created_at": "2026-04-18T06:24:43.044Z",
       "updated_at": "2026-04-18T06:24:43.044Z"
     },
     {
+      "id": "y863",
       "species": "Manectric",
       "dex_number": 310,
       "form": null,
@@ -927,11 +928,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "y863",
       "created_at": "2026-04-18T06:25:04.813Z",
       "updated_at": "2026-04-18T06:25:04.813Z"
     },
     {
+      "id": "kjks",
       "species": "Sharpedo",
       "dex_number": 319,
       "form": null,
@@ -957,11 +958,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "kjks",
       "created_at": "2026-04-18T06:25:35.561Z",
       "updated_at": "2026-04-18T06:25:35.561Z"
     },
     {
+      "id": "zosp",
       "species": "Milotic",
       "dex_number": 350,
       "form": null,
@@ -985,11 +986,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "zosp",
       "created_at": "2026-04-18T06:26:04.765Z",
       "updated_at": "2026-04-18T06:26:04.765Z"
     },
     {
+      "id": "opm0",
       "species": "Absol",
       "dex_number": 359,
       "form": null,
@@ -1015,11 +1016,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "opm0",
       "created_at": "2026-04-18T06:26:32.181Z",
       "updated_at": "2026-04-18T06:26:32.181Z"
     },
     {
+      "id": "ygip",
       "species": "Metagross",
       "dex_number": 376,
       "form": null,
@@ -1045,9 +1046,268 @@
         "mega"
       ],
       "notes": null,
-      "id": "ygip",
       "created_at": "2026-04-18T06:27:08.778Z",
       "updated_at": "2026-04-18T06:27:08.778Z"
+    },
+    {
+      "species": "Lopunny",
+      "dex_number": 428,
+      "form": null,
+      "nickname": null,
+      "gender": "Male",
+      "level": 60,
+      "nature": "Rash",
+      "ability": "Cute Charm",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Champions",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": true,
+      "is_available_for_trade": true,
+      "poke_ball": "Dream Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [
+        "mega"
+      ],
+      "notes": null,
+      "id": "p3bu",
+      "created_at": "2026-04-18T06:33:21.519Z",
+      "updated_at": "2026-04-18T06:33:21.519Z"
+    },
+    {
+      "species": "Garchomp",
+      "dex_number": 445,
+      "form": null,
+      "nickname": "Beta",
+      "gender": "Male",
+      "level": 100,
+      "nature": "Lonely",
+      "ability": "Rough Skin",
+      "is_hidden_ability": true,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Champions",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": true,
+      "is_available_for_trade": false,
+      "poke_ball": "Beast Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [
+        "mega"
+      ],
+      "notes": null,
+      "id": "hms3",
+      "created_at": "2026-04-18T06:33:47.629Z",
+      "updated_at": "2026-04-18T06:33:47.629Z"
+    },
+    {
+      "species": "Lucario",
+      "dex_number": 448,
+      "form": null,
+      "nickname": null,
+      "gender": "Male",
+      "level": 100,
+      "nature": "Calm",
+      "ability": "Steadfast",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": false,
+      "is_available_for_trade": false,
+      "poke_ball": "Beast Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [
+        "mega"
+      ],
+      "notes": null,
+      "id": "osau",
+      "created_at": "2026-04-18T06:34:09.528Z",
+      "updated_at": "2026-04-18T06:34:09.528Z"
+    },
+    {
+      "species": "Froslass",
+      "dex_number": 478,
+      "form": null,
+      "nickname": null,
+      "gender": "Female",
+      "level": 25,
+      "nature": "Quirky",
+      "ability": "Snow Cloak",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Moon Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [
+        "mega"
+      ],
+      "notes": null,
+      "id": "rn28",
+      "created_at": "2026-04-18T06:34:41.798Z",
+      "updated_at": "2026-04-18T06:34:41.798Z"
+    },
+    {
+      "species": "Rotom",
+      "dex_number": 479,
+      "form": "Wash",
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 64,
+      "nature": "Careful",
+      "ability": "Levitate",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": true,
+      "is_available_for_trade": false,
+      "poke_ball": "Fast Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "f8fr",
+      "created_at": "2026-04-18T06:35:09.164Z",
+      "updated_at": "2026-04-18T06:35:09.164Z"
+    },
+    {
+      "species": "Manaphy",
+      "dex_number": 490,
+      "form": null,
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 50,
+      "nature": "Calm",
+      "ability": "Hydration",
+      "is_hidden_ability": false,
+      "ot_name": "HOME",
+      "ot_tid": "250128",
+      "language_tag": "ENG",
+      "origin_mark": "BDSP",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": true,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Cherish Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "7kby",
+      "created_at": "2026-04-18T06:36:26.945Z",
+      "updated_at": "2026-04-18T06:36:26.945Z"
+    },
+    {
+      "species": "Darkrai",
+      "dex_number": 491,
+      "form": null,
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 100,
+      "nature": "Docile",
+      "ability": "Bad Dreams",
+      "is_hidden_ability": false,
+      "ot_name": "GF",
+      "ot_tid": "05016",
+      "language_tag": "ENG",
+      "origin_mark": "Kalos",
+      "current_location": "Home",
+      "is_shiny": false,
+      "is_event": true,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Cherish Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "vnhd",
+      "created_at": "2026-04-18T06:37:02.765Z",
+      "updated_at": "2026-04-18T06:37:02.765Z"
+    },
+    {
+      "species": "Shaymin",
+      "dex_number": 492,
+      "form": null,
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 100,
+      "nature": "Gentle",
+      "ability": "Natural Cure",
+      "is_hidden_ability": false,
+      "ot_name": "GF",
+      "ot_tid": "07016",
+      "language_tag": "ENG",
+      "origin_mark": "Kalos",
+      "current_location": "Home",
+      "is_shiny": false,
+      "is_event": true,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Cherish Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "j6rq",
+      "created_at": "2026-04-18T06:37:32.398Z",
+      "updated_at": "2026-04-18T06:37:32.398Z"
+    },
+    {
+      "species": "Arceus",
+      "dex_number": 493,
+      "form": null,
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 100,
+      "nature": "Mild",
+      "ability": "Multitype",
+      "is_hidden_ability": false,
+      "ot_name": "GF",
+      "ot_tid": "08016",
+      "language_tag": "ENG",
+      "origin_mark": "Kalos",
+      "current_location": "Home",
+      "is_shiny": false,
+      "is_event": true,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Cherish Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "m6d1",
+      "created_at": "2026-04-18T06:38:04.166Z",
+      "updated_at": "2026-04-18T06:38:04.166Z"
     }
   ]
 }
