@@ -624,10 +624,12 @@
       "poke_ball": "Love Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T06:16:38.698Z",
-      "updated_at": "2026-04-18T06:16:38.698Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "6xbr",
@@ -1957,11 +1959,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "legendary"
+        "legendary",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:14:37.142Z",
-      "updated_at": "2026-04-18T15:51:52.074Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "cpfa",
@@ -2393,11 +2396,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:25:35.126Z",
-      "updated_at": "2026-04-18T15:25:35.126Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "gafl",
@@ -2422,10 +2426,12 @@
       "poke_ball": "Nest Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T15:28:55.024Z",
-      "updated_at": "2026-04-18T15:28:55.024Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "eta1",
@@ -2451,11 +2457,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:29:20.513Z",
-      "updated_at": "2026-04-18T15:29:20.513Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "rkf6",
@@ -2539,10 +2546,12 @@
       "poke_ball": "Luxury Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T15:33:26.322Z",
-      "updated_at": "2026-04-18T15:33:26.322Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "a019",
@@ -2688,11 +2697,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:37:37.241Z",
-      "updated_at": "2026-04-18T15:37:37.241Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "knjy",
@@ -2988,11 +2998,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "legendary"
+        "legendary",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:45:19.361Z",
-      "updated_at": "2026-04-18T15:45:19.361Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "qkrw",
@@ -3018,11 +3029,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "legendary"
+        "legendary",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T15:45:30.419Z",
-      "updated_at": "2026-04-18T15:45:30.419Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "iv76",
@@ -3525,10 +3537,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:23:03.961Z",
-      "updated_at": "2026-04-18T16:23:03.961Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "hh1e",
@@ -3640,11 +3654,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:25:16.361Z",
-      "updated_at": "2026-04-18T16:25:16.361Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "fkdt",
@@ -3669,10 +3684,12 @@
       "poke_ball": "Safari Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:25:50.817Z",
-      "updated_at": "2026-04-18T16:25:50.817Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "woda",
@@ -3698,11 +3715,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:26:11.662Z",
-      "updated_at": "2026-04-18T16:26:11.662Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "rtwv",
@@ -3755,10 +3773,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:26:39.797Z",
-      "updated_at": "2026-04-18T16:26:39.797Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "mok9",
@@ -3783,10 +3803,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:27:11.228Z",
-      "updated_at": "2026-04-18T16:27:11.228Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "oy6t",
@@ -3840,11 +3862,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:28:03.730Z",
-      "updated_at": "2026-04-18T16:28:03.730Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "pfsb",
@@ -4015,10 +4038,12 @@
       "poke_ball": "Level Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:30:44.164Z",
-      "updated_at": "2026-04-18T16:30:44.164Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "n6e5",
@@ -4044,11 +4069,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:32:01.312Z",
-      "updated_at": "2026-04-18T16:32:01.312Z"
+      "updated_at": "2026-04-20T23:24:31.261Z"
     },
     {
       "id": "migl",
@@ -4074,11 +4100,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:32:15.392Z",
-      "updated_at": "2026-04-18T16:32:15.392Z"
+      "updated_at": "2026-04-20T23:24:31.261Z"
     },
     {
       "id": "53ej",
@@ -4104,11 +4131,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:32:34.483Z",
-      "updated_at": "2026-04-18T16:32:34.483Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "bu82",
@@ -4134,11 +4162,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:32:48.096Z",
-      "updated_at": "2026-04-18T16:32:48.096Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "36p7",
@@ -4164,11 +4193,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:33:07.662Z",
-      "updated_at": "2026-04-18T16:33:07.662Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "pqrg",
@@ -4283,10 +4313,12 @@
       "poke_ball": "Luxury Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:34:56.062Z",
-      "updated_at": "2026-04-18T16:34:56.062Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "r9ay",
@@ -4311,10 +4343,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:35:13.261Z",
-      "updated_at": "2026-04-18T16:35:13.261Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "9uuy",
@@ -4339,10 +4373,12 @@
       "poke_ball": "Premier Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:35:27.712Z",
-      "updated_at": "2026-04-18T16:35:27.712Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "rozj",
@@ -4368,11 +4404,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:35:47.663Z",
-      "updated_at": "2026-04-18T16:35:47.663Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "472w",
@@ -4398,11 +4435,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:36:04.546Z",
-      "updated_at": "2026-04-18T16:36:04.546Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "1rbo",
@@ -4428,11 +4466,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:36:18.445Z",
-      "updated_at": "2026-04-18T16:36:18.445Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "pa3a",
@@ -4487,10 +4526,12 @@
       "poke_ball": "Premier Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:36:48.479Z",
-      "updated_at": "2026-04-18T16:36:48.479Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "rmrg",
@@ -4515,10 +4556,12 @@
       "poke_ball": "Luxury Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:37:10.678Z",
-      "updated_at": "2026-04-18T16:37:10.678Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "db5p",
@@ -4543,10 +4586,12 @@
       "poke_ball": "Premier Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:37:37.896Z",
-      "updated_at": "2026-04-18T16:37:37.896Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "t8hy",
@@ -4571,10 +4616,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:37:53.343Z",
-      "updated_at": "2026-04-18T16:37:53.343Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "enou",
@@ -4600,11 +4647,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:38:07.987Z",
-      "updated_at": "2026-04-18T16:38:07.987Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "hrlg",
@@ -4630,11 +4678,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T16:38:26.713Z",
-      "updated_at": "2026-04-18T16:38:26.713Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "t980",
@@ -4659,10 +4708,12 @@
       "poke_ball": "Heavy Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:38:44.879Z",
-      "updated_at": "2026-04-18T16:38:44.879Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "y8ac",
@@ -4687,10 +4738,12 @@
       "poke_ball": "Level Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:39:08.275Z",
-      "updated_at": "2026-04-18T16:39:08.275Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "2952",
@@ -4715,10 +4768,12 @@
       "poke_ball": "Love Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:39:27.543Z",
-      "updated_at": "2026-04-18T16:39:27.543Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "e3cj",
@@ -4743,10 +4798,12 @@
       "poke_ball": "Friend Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:39:41.962Z",
-      "updated_at": "2026-04-18T16:39:41.962Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "tov2",
@@ -4771,10 +4828,12 @@
       "poke_ball": "Ultra Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:39:56.247Z",
-      "updated_at": "2026-04-18T16:39:56.247Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "29mw",
@@ -4827,10 +4886,12 @@
       "poke_ball": "Dream Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:40:42.978Z",
-      "updated_at": "2026-04-18T16:40:42.978Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "id": "95ao",
@@ -4855,10 +4916,12 @@
       "poke_ball": "Nest Ball",
       "ribbons": [],
       "marks": [],
-      "tags": [],
+      "tags": [
+        "nfe"
+      ],
       "notes": null,
       "created_at": "2026-04-18T16:41:09.594Z",
-      "updated_at": "2026-04-18T16:41:09.594Z"
+      "updated_at": "2026-04-20T23:24:31.262Z"
     },
     {
       "id": "i69h",
@@ -4884,11 +4947,12 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega"
+        "mega",
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-18T21:17:30.868Z",
-      "updated_at": "2026-04-18T21:17:30.868Z"
+      "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
       "species": "Barbaracle",
