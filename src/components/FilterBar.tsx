@@ -271,9 +271,10 @@ export function FilterBar() {
         </div>
 
         {/* Expanded more filters — overlays content below as part of the same card */}
-        {/* clipPath below hides the top shadow so the panel visually joins the filter bar above */}
+        {/* clipPath below hides the top shadow so the panel visually joins the filter bar above.
+            Large negative bottom/sides let dropdown popovers escape the panel without being clipped. */}
         {showMore && (
-          <div className="absolute left-0 right-0 z-20 bg-white shadow rounded-b-lg px-4 pb-4 pt-1" style={{ clipPath: "inset(0 -10px -10px -10px)" }}>
+          <div className="absolute left-0 right-0 z-20 bg-white shadow rounded-b-lg px-4 pb-4 pt-1" style={{ clipPath: "inset(0 -100vw -100vh -100vw)" }}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {/* Game of origin */}
               <OriginSelect

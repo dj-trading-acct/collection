@@ -37,3 +37,28 @@ main.is-scrolling::-webkit-scrollbar-thumb {
 main.is-scrolling::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.35);
 }
+
+/* Listbox popovers: always-visible scrollbar so overflowing options are discoverable
+   (macOS hides overlay scrollbars by default until active scrolling). */
+ul[role="listbox"] {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+ul[role="listbox"]::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+ul[role="listbox"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+ul[role="listbox"]::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+ul[role="listbox"]::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
