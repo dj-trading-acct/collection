@@ -58,12 +58,11 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega",
-        "untouched"
+        "mega"
       ],
       "notes": null,
       "created_at": "2026-04-17T23:16:11.815Z",
-      "updated_at": "2026-04-17T23:28:55.596Z"
+      "updated_at": "2026-04-20T21:42:15.988Z"
     },
     {
       "id": "yooe",
@@ -149,12 +148,11 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega",
-        "untouched"
+        "mega"
       ],
       "notes": null,
       "created_at": "2026-04-17T23:17:56.557Z",
-      "updated_at": "2026-04-17T23:20:48.718Z"
+      "updated_at": "2026-04-20T21:42:15.988Z"
     },
     {
       "id": "g4uc",
@@ -181,12 +179,11 @@
       "marks": [],
       "tags": [
         "mega",
-        "nfe",
-        "untouched"
+        "nfe"
       ],
       "notes": null,
       "created_at": "2026-04-17T23:18:45.743Z",
-      "updated_at": "2026-04-17T23:18:45.743Z"
+      "updated_at": "2026-04-20T21:42:15.988Z"
     },
     {
       "id": "epy1",
@@ -212,12 +209,11 @@
       "ribbons": [],
       "marks": [],
       "tags": [
-        "mega",
-        "untouched"
+        "mega"
       ],
       "notes": null,
       "created_at": "2026-04-17T23:19:22.195Z",
-      "updated_at": "2026-04-17T23:28:29.832Z"
+      "updated_at": "2026-04-20T21:42:15.988Z"
     },
     {
       "id": "27n8",
@@ -1892,7 +1888,7 @@
       "language_tag": "ENG",
       "origin_mark": "PLZA",
       "current_location": "Home",
-      "is_shiny": true,
+      "is_shiny": false,
       "is_event": true,
       "is_alpha": false,
       "is_available_for_trade": false,
@@ -1904,7 +1900,7 @@
       ],
       "notes": null,
       "created_at": "2026-04-18T15:12:37.744Z",
-      "updated_at": "2026-04-18T15:12:37.744Z"
+      "updated_at": "2026-04-20T23:23:05.359Z"
     },
     {
       "id": "klc6",
@@ -1922,7 +1918,7 @@
       "language_tag": "ENG",
       "origin_mark": "SWSH",
       "current_location": "Home",
-      "is_shiny": true,
+      "is_shiny": false,
       "is_event": true,
       "is_alpha": false,
       "is_available_for_trade": false,
@@ -1935,7 +1931,7 @@
       ],
       "notes": null,
       "created_at": "2026-04-18T15:13:35.193Z",
-      "updated_at": "2026-04-18T15:51:52.074Z"
+      "updated_at": "2026-04-20T23:22:05.274Z"
     },
     {
       "id": "4wvr",
@@ -5011,6 +5007,62 @@
       "id": "7fv1",
       "created_at": "2026-04-20T21:41:36.325Z",
       "updated_at": "2026-04-20T21:41:36.325Z"
+    },
+    {
+      "species": "Slowking",
+      "dex_number": 199,
+      "form": "Galar",
+      "nickname": null,
+      "gender": "Female",
+      "level": 56,
+      "nature": "Hardy",
+      "ability": "Curious Medicine",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "635416",
+      "language_tag": "ENG",
+      "origin_mark": "PLZA",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Heavy Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "khye",
+      "created_at": "2026-04-20T23:17:55.899Z",
+      "updated_at": "2026-04-20T23:17:55.899Z"
+    },
+    {
+      "species": "Xurkitree",
+      "dex_number": 796,
+      "form": null,
+      "nickname": null,
+      "gender": "Genderless",
+      "level": 70,
+      "nature": "Calm",
+      "ability": "Beast Boost",
+      "is_hidden_ability": false,
+      "ot_name": "DJ",
+      "ot_tid": "461881",
+      "language_tag": "ENG",
+      "origin_mark": "SWSH",
+      "current_location": "Home",
+      "is_shiny": true,
+      "is_event": false,
+      "is_alpha": false,
+      "is_available_for_trade": true,
+      "poke_ball": "Poke Ball",
+      "ribbons": [],
+      "marks": [],
+      "tags": [],
+      "notes": null,
+      "id": "1ns4",
+      "created_at": "2026-04-20T23:21:40.485Z",
+      "updated_at": "2026-04-20T23:21:40.485Z"
     }
   ]
 }
