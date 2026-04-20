@@ -449,9 +449,9 @@
       "ribbons": [],
       "marks": [],
       "tags": [],
-      "notes": null,
+      "notes": "Random encounter",
       "created_at": "2026-04-18T06:06:35.887Z",
-      "updated_at": "2026-04-18T06:06:35.887Z"
+      "updated_at": "2026-04-20T23:31:24.945Z"
     },
     {
       "id": "xect",
@@ -537,9 +537,9 @@
       "ribbons": [],
       "marks": [],
       "tags": [],
-      "notes": null,
+      "notes": "Breeding reject (5IV) from pre-bottlecap era",
       "created_at": "2026-04-18T06:10:56.200Z",
-      "updated_at": "2026-04-18T06:10:56.200Z"
+      "updated_at": "2026-04-20T23:41:22.839Z"
     },
     {
       "id": "9np3",
@@ -555,7 +555,7 @@
       "ot_name": "DJ",
       "ot_tid": "696416",
       "language_tag": "ENG",
-      "origin_mark": "Kalos",
+      "origin_mark": "SV",
       "current_location": "Home",
       "is_shiny": true,
       "is_event": false,
@@ -567,9 +567,9 @@
       "tags": [
         "mega"
       ],
-      "notes": null,
+      "notes": "Random encounter",
       "created_at": "2026-04-18T06:15:32.357Z",
-      "updated_at": "2026-04-18T06:15:32.357Z"
+      "updated_at": "2026-04-20T23:32:10.573Z"
     },
     {
       "id": "0toy",
@@ -4955,6 +4955,7 @@
       "updated_at": "2026-04-20T23:24:31.263Z"
     },
     {
+      "id": "vog5",
       "species": "Barbaracle",
       "dex_number": 689,
       "form": null,
@@ -4980,11 +4981,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "vog5",
       "created_at": "2026-04-20T21:40:30.642Z",
       "updated_at": "2026-04-20T21:40:30.642Z"
     },
     {
+      "id": "6rcv",
       "species": "Barbaracle",
       "dex_number": 689,
       "form": null,
@@ -5010,11 +5011,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "6rcv",
       "created_at": "2026-04-20T21:40:48.359Z",
       "updated_at": "2026-04-20T21:40:48.359Z"
     },
     {
+      "id": "wd23",
       "species": "Aegislash",
       "dex_number": 681,
       "form": null,
@@ -5038,11 +5039,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "wd23",
       "created_at": "2026-04-20T21:41:12.527Z",
       "updated_at": "2026-04-20T21:41:12.527Z"
     },
     {
+      "id": "7fv1",
       "species": "Aggron",
       "dex_number": 306,
       "form": null,
@@ -5068,11 +5069,11 @@
         "mega"
       ],
       "notes": null,
-      "id": "7fv1",
       "created_at": "2026-04-20T21:41:36.325Z",
       "updated_at": "2026-04-20T21:41:36.325Z"
     },
     {
+      "id": "khye",
       "species": "Slowking",
       "dex_number": 199,
       "form": "Galar",
@@ -5096,11 +5097,11 @@
       "marks": [],
       "tags": [],
       "notes": null,
-      "id": "khye",
       "created_at": "2026-04-20T23:17:55.899Z",
       "updated_at": "2026-04-20T23:17:55.899Z"
     },
     {
+      "id": "1ns4",
       "species": "Xurkitree",
       "dex_number": 796,
       "form": null,
@@ -5123,10 +5124,9 @@
       "ribbons": [],
       "marks": [],
       "tags": [],
-      "notes": null,
-      "id": "1ns4",
+      "notes": "Dynamax Adventures 1/100 odds",
       "created_at": "2026-04-20T23:21:40.485Z",
-      "updated_at": "2026-04-20T23:21:40.485Z"
+      "updated_at": "2026-04-20T23:32:34.575Z"
     }
   ]
 }
